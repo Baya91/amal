@@ -1,0 +1,81 @@
+
+
+
+
+<!-- Mets Marocains Variés Start -->
+<div class="container-fluid edit-py-5">
+  <div class="container ">
+    <div class="text-center">
+      <div class=" wow fadeInUp" data-wow-delay="0.1s">
+        <div class="title-center">
+          <h5 sty>Notre menu</h5>
+          <h1>Mets Marocains Variés</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-container">
+      <div class="horizontal-snap-wrapper">
+        <button class="scroll-btn left" *ngIf="showMenuButtons" (click)="scrollLeftMenu()">‹</button>
+        <button class="scroll-btn right" *ngIf="showMenuButtons" (click)="scrollRightMenu()">›</button>
+
+        <div class="horizontal-snap" #menuScrollContainer>
+          <div class="element" *ngFor="let item of notremenuhome">
+            <div class="image-wrapper">
+              <img [src]="item.image" [alt]="item.title" (load)="checkScrollButtonsVisibility()">
+              <div class="overlay">
+                <h3>{{ item.title }}</h3>
+                <a [routerLink]="item.link" class="view-btn">عرض التفاصيل</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- Mets Marocains Variés End -->
+
+<!-- Sélection gastronomique surgelée Start -->
+<div class="container-fluid  edit-py-5">
+  <div class="container ">
+    <div class="text-center">
+      <div class=" wow fadeInUp" data-wow-delay="0.1s">
+        <div class="title-center">
+         
+          <h1>Sélection gastronomique surgelée</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-container">
+      <div class="horizontal-snap-wrapper">
+        <button class="scroll-btn left" *ngIf="showSurgeleButtons" (click)="scrollLeftSurgele()">‹</button>
+        <button class="scroll-btn right" *ngIf="showSurgeleButtons" (click)="scrollRightSurgele()">›</button>
+
+        <div class="horizontal-snap" #surgeleScrollContainer style="justify-content: flex-start;">
+          <div class="element" *ngFor="let item of surgeleHome">
+            <div class="image-wrapper">
+              <img [src]="item.image" [alt]="item.title" (load)="checkScrollButtonsVisibility()">
+              <div class="overlay">
+                <h3>{{ item.title }}</h3>
+                <a [routerLink]="item.link" class="view-btn">عرض التفاصيل</a>
+              </div>
+              <div style="
+              color: rgb(0, 0, 0);
+              padding: 10px;
+              width: 100%;">Frozen Mini Bastilat Djaj- 6 mini-
+            <span style="width: 100%; display: flex;
+              color: rgb(65, 65, 65);
+            justify-content: start; align-items: center;">10.05$</span>  
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- Sélection gastronomique surgelée End -->
