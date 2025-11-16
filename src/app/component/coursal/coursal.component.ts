@@ -182,7 +182,7 @@ gAfterViewInit(): void {
   
   imagesTextList = [
   {
-    image: '../../../assets/img/amalHome/1.png',
+    image: './assets/img/amalHome/1.png',
    
     text: `
         <p class="txt-card">
@@ -191,7 +191,7 @@ gAfterViewInit(): void {
     `
   },
   {
-    image: '../../../assets/img/amalHome/2.png',
+    image: './assets/img/amalHome/2.png',
       text: `
         <p class="txt-card">
         Nous transformons chaque expérience culinaire en un voyage unique aux saveurs authentiques du Maroc, en apportant notre savoir-faire marocain en France, où <span class="txt-gra">DÉLICESDORÉS</span> propose des recettes alliant tradition et créativité moderne. Nous soignons chaque détail, des ingrédients à la présentation,
@@ -200,7 +200,7 @@ gAfterViewInit(): void {
     
   },
   {
-    image: '../../../assets/img/amalHome/3.png',
+    image: './assets/img/amalHome/3.png',
    
    text: `
       <p class="txt-card">
