@@ -1,0 +1,196 @@
+<!-- Mets Marocains Variés Start -->
+<div class="container-fluid edit-py-5">
+  <div class="container ">
+    <div class="text-center">
+      <div class=" wow fadeInUp" data-wow-delay="0.1s">
+        <div class="title-center">
+          <h5 sty>Notre menu</h5>
+          <h1>**Mets Variés**</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-container">
+      <div class="horizontal-snap-wrapper">
+        <button class="scroll-btn left" *ngIf="showMenuButtons" (click)="scrollLeftMenu()">‹</button>
+        <button class="scroll-btn right" *ngIf="showMenuButtons" (click)="scrollRightMenu()">›</button>
+
+        <div class="horizontal-snap" #menuScrollContainer>
+          <div class="element" *ngFor="let item of notremenuhome">
+            <div class="image-wrapper">
+              <img [src]="item.image" [alt]="item.title" (load)="checkScrollButtonsVisibility()">
+              <a [routerLink]="item.link">
+                <div class="overlay ">
+
+
+                  <h3>{{ item.title }}</h3>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- Mets Marocains Variés End -->
+
+<!-- Sélection gastronomique surgelée Start -->
+<div class="container-fluid  edit-py-5">
+  <div class="container ">
+    <div class="text-center">
+      <div class=" wow fadeInUp" data-wow-delay="0.1s">
+        <div class="title-center">
+
+          <h1>**Produits surgelés**
+          </h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-container">
+      <div class="horizontal-snap-wrapper">
+        <button class="scroll-btn left" *ngIf="showSurgeleButtons" (click)="scrollLeftSurgele()">‹</button>
+        <button class="scroll-btn right" *ngIf="showSurgeleButtons" (click)="scrollRightSurgele()">›</button>
+
+        <div class="horizontal-snap" #surgeleScrollContainer style="justify-content: flex-start;">
+          <div class="element" *ngFor="let item of surgeleHome">
+            <div class="image-wrapper">
+              <img [src]="item.image" [alt]="item.title" (load)="checkScrollButtonsVisibility()">
+              <div class="overlay opacity0">
+
+                <a [routerLink]="item.link"></a>
+              </div>
+              <div class="info-produ"> {{ item.title }}
+                <span class="info-produ-price">{{item.price}}€</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- Sélection gastronomique surgelée End -->
+
+
+
+<!-- segond corsal Start -->
+
+<section id="shopify-section-template--images-with-text-scrolling" class="shopify-section section section--narrow">
+
+  <!-- ===== الهاتف: كاردز أفقية ===== -->
+  <div class="mobile-wrapper">
+    <div class="cards-container">
+      <div class="card" *ngFor="let item of imagesTextList">
+        <img class="card-image" [src]="item.image" />
+        <div class="card-content">
+
+          <div [innerHTML]="item.text"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== سطح المكتب ===== -->
+  <div class="desktop-wrapper">
+    <div class="sticky-container">
+      <!-- الصورة اليسارية -->
+      <div class="image-side">
+        <img *ngFor="let item of imagesTextList; let i = index" [src]="item.image" [class.active]="activeIndex === i"
+          class="side-image" />
+      </div>
+
+      <!-- النصوص اليمنى -->
+      <div class="text-side">
+        <div *ngFor="let item of imagesTextList; let i = index" class="text-block" #textBlock [attr.data-index]="i">
+
+          <div [innerHTML]="item.text"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!--segond Corsal End -->
+
+
+<!-- Sélection gastronomique surgelée Start -->
+<div class="container-fluid  edit-py-5">
+  <div class="container ">
+    <div class="text-center">
+      <div class=" wow fadeInUp" data-wow-delay="0.1s">
+        <div class="title-center">
+<h1>**Plats futuristes**
+          </h1>
+         
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-container">
+      <div class="horizontal-snap-wrapper">
+        <button class="scroll-btn left" *ngIf="showplatFuturistButtons" (click)="scrollLeftPlatFuturist()">‹</button>
+        <button class="scroll-btn right" *ngIf="showplatFuturistButtons" (click)="scrollRightPlatFuturist()">›</button>
+
+        <div class="horizontal-snap" #platFuturistContainer style="justify-content: flex-start;">
+          <div class="element" *ngFor="let item of platFuturist">
+            <div class="image-wrapper">
+              <img [src]="item.image" [alt]="item.title" (load)="checkScrollButtonsVisibility()">
+            <div class="overlay opacity0">
+
+                <a [routerLink]="item.link"></a>
+              </div>
+              <div class="info-produ"> {{ item.title }}
+              
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- Sélection gastronomique surgelée End -->
+
+
+
+<!-- Review Start -->
+
+
+<section class="section section-testimonials">
+  <h2 class="section-title">Avis de nos clients</h2>
+
+  <div class="testimonials-carousel">
+    <button class="scroll-btn left" (click)="scrollLeftTestimonials()">&#10094;</button>
+    <div #testimonialContainer class="testimonials-container">
+      <div class="testimonial-card" *ngFor="let r of ratings">
+        <div class="testimonial-header">
+          <div class="rating-stars" role="img" [attr.aria-label]="r.rating + ' sur 5 étoiles'">
+            <ng-container *ngFor="let i of [1,2,3,4,5]">
+              <svg width="15" height="15" viewBox="0 0 15 15"
+                [ngClass]="{'star-filled': i <= r.rating, 'star-empty': i > r.rating}">
+                <path
+                  d="M7.5 0L9.58587 5.2731L15 5.72949L10.875 9.44483L12.1353 15L7.5 12.0231L2.86475 15L4.125 9.44483L0 5.72949L5.41414 5.2731L7.5 0Z" />
+              </svg>
+            </ng-container>
+          </div>
+
+        </div>
+        <div class="testimonial-content">
+          <span class="customer-name">{{ r.name }}</span>
+          <p class="testimonial-text " style="margin-top: 5px;">{{ r.title }}</p>
+          <p class="testimonial-text " style="margin-top: -14px;">"{{ r.comment }}"</p>
+        </div>
+      </div>
+    </div>
+    <button class="scroll-btn right" (click)="scrollRightTestimonials()">&#10095;</button>
+  </div>
+</section>
+
+
+<!-- Review End -->
